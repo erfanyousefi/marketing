@@ -14,7 +14,7 @@
     "marketing",
     "express",
     "redis",
-    "postgress"
+    "postgres"
   ],
   "author": "AliReza Rezazadeh",
   "license": "Apache-2.0",
@@ -23,6 +23,9 @@
   },
   "homepage": "https://gitlab.com/Reza4096/marketing#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
   }
 }
