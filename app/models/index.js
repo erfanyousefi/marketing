@@ -32,6 +32,18 @@ db.BuyLinkMarketerLevel = require("./BuyLinkMarketerLevel.js")(sequelize, Sequel
 db.ShareLinkMarketerLevel = require("./ShareLinkMarketerLevel.js")(sequelize, Sequelize);
 db.IntroducerCodeMarketerLevel = require("./IntroducerCodeMarketerLevel.js")(sequelize, Sequelize);
 db.DiscountCodeMarketerLevel = require("./DiscountCodeMarketerLevel.js")(sequelize, Sequelize);
+db.Image = require("./Image.js")(sequelize, Sequelize);
+db.SiteInfo = require("./SiteInfo.js")(sequelize, Sequelize);
+db.Product = require("./Product.js")(sequelize, Sequelize);
+db.ProductAttribute = require("./ProductAttribute.js")(sequelize, Sequelize);
+db.Link = require("./Link.js")(sequelize, Sequelize);
+
+db.ProductCampaign = require("./ProductCampaign.js")(sequelize, Sequelize);
+db.LinkCampaign = require("./LinkCampaign.js")(sequelize, Sequelize);
+db.DiscountCodeCampaign = require("./DiscountCodeCampaign.js")(sequelize, Sequelize);
+
+
+//Relations
 
 //AdvertiseOwner and admin
 
@@ -68,6 +80,16 @@ db.DiscountCodeMarketerLevel = require("./DiscountCodeMarketerLevel.js")(sequeli
 //MarketerLevel and IntroducerCodeMarketerLevel
 
 //MarketerLevel and DiscountCodeMarketerLevel
+
+//Product and Image
+
+//Product and Image
+
+//ProductCampaign and Image
+
+//LinkCampaign and Image
+
+//DiscountCodeCampaign and Image
 
 
 module.exports = db;

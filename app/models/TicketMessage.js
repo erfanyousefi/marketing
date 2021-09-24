@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const ticket = sequelize.define("tickets", {
+    const ticketMessage = sequelize.define("ticket_messages", {
         id: {
             type: Sequelize.UUID,
             allowNull: false,
@@ -34,5 +34,5 @@ module.exports = (sequelize, Sequelize) => {
         paranoid: true
     });
 
-    return ticket;
+    return ticketMessage;
 };

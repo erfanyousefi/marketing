@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const ShareLinkMarketerLevel = sequelize.define("share_panel_marketer_levels", {
+    const introduceLinkMarketerLevel = sequelize.define("introduce_link_marketer_level", {
         levelId: {
             type: Sequelize.INTEGER,
             allowNull: false
@@ -33,5 +33,5 @@ module.exports = (sequelize, Sequelize) => {
         paranoid: true
     });
 
-    return ShareLinkMarketerLevel;
+    return introduceLinkMarketerLevel;
 };
