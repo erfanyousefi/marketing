@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
-    const introduceLinkMarketerLevel = sequelize.define("introduce_link_marketer_level", {
-        levelId: {
+    const introducerCodeMarketerLevel = sequelize.define("introducer_code_marketer_levels", {
+        level_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -33,5 +33,5 @@ module.exports = (sequelize, Sequelize) => {
         paranoid: true
     });
 
-    return introduceLinkMarketerLevel;
+    return introducerCodeMarketerLevel;
 };

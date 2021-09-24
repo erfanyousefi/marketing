@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const productAttribute = sequelize.define("product_attributes", {
-        productId: {
+        product_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

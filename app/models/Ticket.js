@@ -1,15 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const ticket = sequelize.define("tickets", {
-        id: {
-            type: Sequelize.UUID,
-            allowNull: false,
-            primaryKey: true
-        },
         title: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        userId: {
+        user_id: {
             type: Sequelize.UUID,
             allowNull: false
         },

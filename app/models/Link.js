@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const Link = sequelize.define("links", {
-        advertiseOwnerId: {
+        advertise_owner_id: {
             type: Sequelize.UUID,
             allowNull: false
         },

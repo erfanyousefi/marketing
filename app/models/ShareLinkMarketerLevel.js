@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const shareLinkMarketerLevel = sequelize.define("share_panel_marketer_levels", {
-        levelId: {
+        level_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

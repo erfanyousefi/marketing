@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const introducerCodeUserData = sequelize.define("introducer_code_user_data", {
-        introducerCodeMarketerId: {
+        introducer_code_marketer_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        linkCampaignId: {
+        link_campaign_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

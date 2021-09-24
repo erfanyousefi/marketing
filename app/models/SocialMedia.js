@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const socialMedia = sequelize.define("social_medias", {
-        marketerId: {
+        marketer_id: {
             type: Sequelize.UUID,
             allowNull: false
         },

@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
-    const BuyLinkMarketer = sequelize.define("buy_link_marketers", {
-        marketerId: {
+    const buyLinkMarketer = sequelize.define("buy_link_marketers", {
+        marketer_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
-        productCampaignId: {
+        product_campaign_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -17,5 +17,5 @@ module.exports = (sequelize, Sequelize) => {
         paranoid: true
     });
 
-    return BuyLinkMarketer;
+    return buyLinkMarketer;
 };

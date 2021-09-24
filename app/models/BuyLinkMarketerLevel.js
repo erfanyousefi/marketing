@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const buyLinkMarketerLevel = sequelize.define("buy_link_marketer_levels", {
-        levelId: {
+        level_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

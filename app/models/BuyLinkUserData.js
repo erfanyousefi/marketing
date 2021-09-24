@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
-    const BuyLinkUserData = sequelize.define("buy_link_user_data", {
-        buyLinkMarketerId: {
+    const buyLinkUserData = sequelize.define("buy_link_user_data", {
+        buy_link_marketer_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
-        phoneNumber: {
+        phone_number: {
             type: Sequelize.STRING,
             allowNull: false
         },
@@ -12,7 +12,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        postalCode: {
+        postal_code: {
             type: Sequelize.STRING,
             allowNull: false
         },
@@ -20,7 +20,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        productCampaignId: {
+        product_campaign_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         }
@@ -29,5 +29,5 @@ module.exports = (sequelize, Sequelize) => {
         paranoid: true
     });
 
-    return BuyLinkUserData;
+    return buyLinkUserData;
 };

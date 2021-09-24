@@ -1,15 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const ticketMessage = sequelize.define("ticket_messages", {
-        id: {
-            type: Sequelize.UUID,
-            allowNull: false,
-            primaryKey: true
-        },
-        title: {
-            type: Sequelize.STRING,
+        ticketId: {
+            type: Sequelize.INTEGER,
             allowNull: false
         },
-        userId: {
+        user_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
@@ -18,6 +13,16 @@ module.exports = (sequelize, Sequelize) => {
                 'Admin',
                 'AdvertiseOwner',
                 'Marketer',
+            ),
+            allowNull: false
+        },
+        type: {
+            type: Sequelize.ENUM(
+                'Text',
+                'Image',
+                'Audio',
+                'Video',
+                'Doc'
             ),
             allowNull: false
         },

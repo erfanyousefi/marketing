@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const productCampaign = sequelize.define("product_campaigns", {
-        advertiseOwnerId: {
+        advertise_owner_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
@@ -19,27 +19,27 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        productId: {
+        product_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        marketerLevelId: {
+        marketer_level_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        marketersNumber: {
+        marketers_number: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        daysNumber: {
+        days_number: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        smsNumber: {
+        sms_number: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        actNumber: {
+        act_number: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
@@ -47,7 +47,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        priceRemainder: {
+        price_remainder: {
             type: Sequelize.INTEGER,
             allowNull: true
         },

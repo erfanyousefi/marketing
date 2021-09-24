@@ -1,14 +1,14 @@
 module.exports = (sequelize, Sequelize) => {
     const discountCodeUserDate = sequelize.define("discount_code_user_date", {
-        discountCodeMarketerId: {
+        discount_code_marketer_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        discountCodeCampaignId: {
+        discount_code_campaign_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        userId: {
+        user_id: {
             type: Sequelize.STRING,
             allowNull: false
         }

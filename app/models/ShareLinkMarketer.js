@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const shareLinkMarketer = sequelize.define("share_link_marketers", {
-        marketerId: {
+        marketer_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
-        linkCampaignId: {
+        link_campaign_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

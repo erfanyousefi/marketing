@@ -1,18 +1,22 @@
 const dbConfig = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    operatorsAliases: 0,
-
-    pool: {
-        max: dbConfig.pool.max,
-        min: dbConfig.pool.min,
-        acquire: dbConfig.pool.acquire,
-        idle: dbConfig.pool.idle
+const sequelize = new Sequelize(
+    dbConfig.DB,
+    dbConfig.USER,
+    dbConfig.PASSWORD,
+    {
+        host: dbConfig.HOST,
+        dialect: dbConfig.dialect,
+        operatorsAliases: 0,
+        pool: {
+            max: dbConfig.pool.max,
+            min: dbConfig.pool.min,
+            acquire: dbConfig.pool.acquire,
+            idle: dbConfig.pool.idle
+        }
     }
-});
+);
 
 const db = {};
 
@@ -105,5 +109,18 @@ db.DiscountCodeUserDate = require("./DiscountCodeUserDate.js")(sequelize, Sequel
 
 //DiscountCodeCampaign and Image
 
+
+db
+    .sequelize
+    .sync({
+        force: false,// TODO :: remove in production
+        logging : false
+    })
+    .then(() => {
+        console.log("Successfully connected to database");
+    })
+    .catch(err => {
+        console.log("Database Error :", err.message)
+    });
 
 module.exports = db;

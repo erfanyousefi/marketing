@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        levelId: {
+        level_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

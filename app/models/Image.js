@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
             ),
             allowNull: false
         },
-        modelId: {
+        model_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

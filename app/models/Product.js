@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const product = sequelize.define("products", {
-        advertiseOwnerId: {
+        advertise_owner_id: {
             type: Sequelize.UUID,
             allowNull: false
         },

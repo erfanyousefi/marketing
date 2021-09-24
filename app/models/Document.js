@@ -1,10 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const document = sequelize.define("documents", {
-        name: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        userId: {
+        user_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
@@ -25,5 +21,5 @@ module.exports = (sequelize, Sequelize) => {
         paranoid: true
     });
 
-    return admin;
+    return document;
 };

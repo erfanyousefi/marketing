@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const discountCodeCampaign = sequelize.define("discount_code_campaigns", {
-        advertiseOwnerId: {
+        advertise_owner_id: {
             type: Sequelize.UUID,
             allowNull: false
         },
@@ -12,27 +12,27 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        marketerLevelId: {
+        marketer_level_id: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        marketersNumber: {
+        marketers_number: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        startDate: {
+        start_date: {
             type: Sequelize.DATE,
             allowNull: false
         },
-        finishDate: {
+        finish_date: {
             type: Sequelize.DATE,
             allowNull: false
         },
-        maxUses: {
+        max_uses: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        maxUseForEachUser: {
+        max_use_for_each_user: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
@@ -40,7 +40,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        priceRemainder: {
+        price_remainder: {
             type: Sequelize.INTEGER,
             allowNull: true
         },

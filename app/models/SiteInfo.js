@@ -21,7 +21,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false
         },
         price_for_discount_price_code: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.JSON,
             allowNull: false
         },
     }, {
