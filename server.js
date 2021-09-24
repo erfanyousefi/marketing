@@ -1,24 +1,26 @@
-//.env
-require('dotenv').config()
-
-//express
-const express = require('express')
-const app = express()
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-//orm
-const db = require("./app/models");
-db.sequelize.sync();
+const express = require('express');
+const app = express();
 
 
+//request config
+require('./bootstrap/request')(app);
 
-app.get('/', (req, res) => {
-    res.json({ message: "Marketing Project" });
-})
+//.env config
+require('./bootstrap/dotenv')
 
-// set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+
+//database config
+require('./app/models')
+
+
+//routing config
+require('./bootstrap/router')(app);
+
+//not found config
+require('./bootstrap/not_found')(app);
+
+//Error handler
+require('./bootstrap/error_handler')(app);
+
+//listening config
+require('./bootstrap/listening')(app);
