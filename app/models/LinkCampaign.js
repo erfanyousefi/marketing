@@ -7,8 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         type: {
             type: Sequelize.ENUM(
                 'ShareLink',
-                'IntroducerCode',
-                'DiscountCode',
+                'IntroducerCode'
             ),
             allowNull: false
         },

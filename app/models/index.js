@@ -39,11 +39,25 @@ db.ProductAttribute = require("./ProductAttribute.js")(sequelize, Sequelize);
 db.Link = require("./Link.js")(sequelize, Sequelize);
 
 db.ProductCampaign = require("./ProductCampaign.js")(sequelize, Sequelize);
+db.SMSPanelMarketer = require("./SMSPanelMarketer.js")(sequelize, Sequelize);
+db.SMSPanelPhoneNumber = require("./SMSPanelPhoneNumber.js")(sequelize, Sequelize);
+db.BuyLinkMarketer = require("./BuyLinkMarketer.js")(sequelize, Sequelize);
+db.BuyLinkUserData = require("./BuyLinkUserData.js")(sequelize, Sequelize);
+
+
 db.LinkCampaign = require("./LinkCampaign.js")(sequelize, Sequelize);
+db.ShareLinkMarketer = require("./ShareLinkMarketer.js")(sequelize, Sequelize);
+db.ShareLinkUserDate = require("./ShareLinkUserDate.js")(sequelize, Sequelize);
+db.IntroducerCodeMarketer = require("./IntroducerCodeMarketer.js")(sequelize, Sequelize);
+db.IntroducerCodeUserData = require("./IntroducerCodeUserData.js")(sequelize, Sequelize);
+
+
 db.DiscountCodeCampaign = require("./DiscountCodeCampaign.js")(sequelize, Sequelize);
+db.DiscountCodeMarketer = require("./DiscountCodeMarketer.js")(sequelize, Sequelize);
+db.DiscountCodeUserDate = require("./DiscountCodeUserDate.js")(sequelize, Sequelize);
 
 
-//Relations
+// TODO :: Relations
 
 //AdvertiseOwner and admin
 
