@@ -1,20 +1,22 @@
 const express = require("express");
 const router = express.Router();
+const MarketerController = require('../../../controllers/admin/MarketerController');
 
 
-router.get('/index');
+router.get('/index', [], MarketerController.index);
 
-router.get('/show/:marketer');
+//returns marketer an all of its social media
+router.get('/show/:marketer', [], MarketerController.show);
 
-router.post('/set-level/:marketer');
+router.post('/register/:marketer/social-media/:social_media', [], MarketerController.registerSocialMedia);
 
-router.post('/register/:marketer/social-media/:social_media');
+router.post('/register/:marketer', [], MarketerController.register);
 
-router.post('/register/:marketer');
+router.post('/set-level/:marketer', [], MarketerController.setLevel);
 
-router.post('/ban/:marketer');
+router.post('/ban/:marketer', [], MarketerController.ban);
 
-router.post('/unban/:marketer');
+router.post('/unban/:marketer', [], MarketerController.unban);
 
 
 module.exports = router;

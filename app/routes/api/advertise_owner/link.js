@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
+const LinkController = require('../../../controllers/advertise_owner/LinkController')
 
+router.get('/index', [], LinkController.index);
 
-router.get('/index');
+router.get('/show/:link', [], LinkController.show);
 
-router.get('/show/:link');
+router.post('/create', [], LinkController.create);
 
-router.post('/create');
+router.post('/update/:link', [], LinkController.update);
 
-router.post('/update/:link');
-
-router.post('/delete/:link');
+router.post('/delete/:link', [], LinkController.delete);
 
 
 module.exports = router;
