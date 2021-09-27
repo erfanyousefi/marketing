@@ -27,8 +27,6 @@ db.Admin = require("./Admin.js")(sequelize, Sequelize);
 db.AdvertiseOwner = require("./AdvertiseOwner.js")(sequelize, Sequelize);
 db.Marketer = require("./Marketer.js")(sequelize, Sequelize);
 db.Document = require("./Document.js")(sequelize, Sequelize);
-db.Ticket = require("./Ticket.js")(sequelize, Sequelize);
-db.TicketMessage = require("./TicketMessage.js")(sequelize, Sequelize);
 db.SocialMedia = require("./SocialMedia.js")(sequelize, Sequelize);
 db.MarketerLevel = require("./MarketerLevel.js")(sequelize, Sequelize);
 db.SMSPanelMarketerLevel = require("./SMSPanelMarketerLevel.js")(sequelize, Sequelize);
@@ -87,57 +85,6 @@ db.Marketer.hasMany(db.Document, {
     }
 });
 db.Document.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
-//Ticket and TicketMessage
-db.Ticket.hasMany(db.TicketMessage);
-db.TicketMessage.belongsTo(db.Ticket);
-//Ticket and AdvertiseOwner
-db.Ticket.hasMany(db.Marketer);
-db.Marketer.belongsTo(db.MarketerLevel);
-//Ticket and AdvertiseOwner
-db.AdvertiseOwner.hasMany(db.Ticket, {
-    foreignKey: 'userId',
-    constraints: false,
-    scope: {
-        role: 'AdvertiseOwner'
-    }
-});
-db.Ticket.belongsTo(db.AdvertiseOwner, {foreignKey: 'userId', constraints: false});
-//Ticket and Marketer
-db.Marketer.hasMany(db.Ticket, {
-    foreignKey: 'userId',
-    constraints: false,
-    scope: {
-        role: 'Marketer'
-    }
-});
-db.Ticket.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
-//TicketMessage and Admin
-db.Admin.hasMany(db.TicketMessage, {
-    foreignKey: 'userId',
-    constraints: false,
-    scope: {
-        role: 'Admin'
-    }
-});
-db.TicketMessage.belongsTo(db.Admin, {foreignKey: 'userId', constraints: false});
-//TicketMessage and AdvertiseOwner
-db.AdvertiseOwner.hasMany(db.TicketMessage, {
-    foreignKey: 'userId',
-    constraints: false,
-    scope: {
-        role: 'AdvertiseOwner'
-    }
-});
-db.TicketMessage.belongsTo(db.AdvertiseOwner, {foreignKey: 'userId', constraints: false});
-//TTicketMessage and Marketer
-db.Marketer.hasMany(db.TicketMessage, {
-    foreignKey: 'userId',
-    constraints: false,
-    scope: {
-        role: 'Marketer'
-    }
-});
-db.TicketMessage.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
 
 
 //Marketer and SocialMedia
