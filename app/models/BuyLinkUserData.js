@@ -4,7 +4,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        phone_number: {
+        phoneNumber: {
             type: Sequelize.STRING,
             allowNull: false
         },
@@ -12,11 +12,11 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        postal_code: {
+        postalCode: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        product_numbers: {
+        productNumbers: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

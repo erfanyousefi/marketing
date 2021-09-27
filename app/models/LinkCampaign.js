@@ -27,23 +27,23 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        marketers_number: {
+        marketersNumber: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        days_number: {
+        daysNumber: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        click_number: {
+        clickNumber: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        act_number: {
+        actNumber: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        register_number: {
+        registerNumber: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
@@ -51,7 +51,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        price_remainder: {
+        priceRemainder: {
             type: Sequelize.INTEGER,
             allowNull: true
         },

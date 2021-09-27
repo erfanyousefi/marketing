@@ -4,27 +4,27 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        marketer_percent: {
+        marketerPercent: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        parent_marketer_percent: {
+        parentMarketerPercent: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        advertise_owner_percent: {
+        advertiseOwnerPercent: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_each_marketer: {
+        priceForEachMarketer: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_each_day: {
+        priceForEachDay: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_each_register: {
+        priceForEachRegister: {
             type: Sequelize.INTEGER,
             allowNull: false
         }

@@ -1,26 +1,26 @@
 module.exports = (sequelize, Sequelize) => {
     const siteInfo = sequelize.define("site_infos", {
-        price_for_block: {
+        priceForBlock: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_sms_panel: {
+        priceForSMSPanel: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_buy_link: {
+        priceForBuyLink: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_share_link: {
+        priceForShareLink: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_introducer_code: {
+        priceForIntroducerCode: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        price_for_discount_price_code: {
+        priceForDiscountPriceCode: {
             type: Sequelize.JSON,
             allowNull: false
         },

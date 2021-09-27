@@ -16,23 +16,23 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        marketers_number: {
+        marketersNumber: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
-        start_date: {
+        startDate: {
             type: Sequelize.DATE,
             allowNull: false
         },
-        finish_date: {
+        finishDate: {
             type: Sequelize.DATE,
             allowNull: false
         },
-        max_uses: {
+        maxUses: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        max_use_for_each_user: {
+        maxUseForEachUser: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
@@ -40,7 +40,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        price_remainder: {
+        priceRemainder: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
