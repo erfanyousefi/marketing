@@ -28,11 +28,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         text: {
             type: Sequelize.STRING,
-            allowNull: false
+            allowNull: true
         },
         file: {
             type: Sequelize.STRING,
-            allowNull: false
+            allowNull: true
         },
     }, {
         timestamps: true,

@@ -87,6 +87,9 @@ db.Marketer.hasMany(db.Document, {
     }
 });
 db.Document.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
+//Ticket and TicketMessage
+db.Ticket.hasMany(db.TicketMessage);
+db.TicketMessage.belongsTo(db.Ticket);
 //Ticket and AdvertiseOwner
 db.Ticket.hasMany(db.Marketer);
 db.Marketer.belongsTo(db.MarketerLevel);
@@ -155,6 +158,9 @@ db.IntroducerCodeMarketerLevel.belongsTo(db.MarketerLevel);
 //MarketerLevel and DiscountCodeMarketerLevel
 db.MarketerLevel.hasMany(db.DiscountCodeMarketerLevel);
 db.DiscountCodeMarketerLevel.belongsTo(db.MarketerLevel);
+//Product and ProductAttribute
+db.Product.hasMany(db.ProductAttribute);
+db.ProductAttribute.belongsTo(db.Product);
 //Product and Image
 db.Product.hasMany(db.Image, {
     foreignKey: 'modelId',
@@ -192,6 +198,13 @@ db.DiscountCodeCampaign.hasMany(db.Image, {
 });
 db.Image.belongsTo(db.DiscountCodeCampaign, {foreignKey: 'modelId', constraints: false});
 
+
+//Product and Product
+db.AdvertiseOwner.hasMany(db.Product);
+db.Product.belongsTo(db.AdvertiseOwner);
+//ProductCampaign and MarketerLevel
+db.AdvertiseOwner.hasMany(db.Link);
+db.Link.belongsTo(db.AdvertiseOwner);
 
 
 //ProductCampaign::

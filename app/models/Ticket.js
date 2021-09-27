@@ -10,7 +10,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         role: {
             type: Sequelize.ENUM(
-                'Admin',
                 'AdvertiseOwner',
                 'Marketer',
             ),
