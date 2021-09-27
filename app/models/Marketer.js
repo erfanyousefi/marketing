@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        level_id: {
+        levelId: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -23,10 +23,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         registeredAt: {
             type: Sequelize.DATE,
-            allowNull: true
-        },
-        registeredBy: {
-            type: Sequelize.UUID,
             allowNull: true
         },
         isBanned: {

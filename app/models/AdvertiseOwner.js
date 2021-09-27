@@ -18,10 +18,6 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE,
             allowNull: true
         },
-        registeredBy: {
-            type: Sequelize.UUID,
-            allowNull: true
-        },
         isBanned: {
             type: Sequelize.BOOLEAN,
             allowNull: false,

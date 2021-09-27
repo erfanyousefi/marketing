@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const discountCodeMarketer = sequelize.define("discount_code_marketers", {
-        marketer_id: {
+        marketerId: {
             type: Sequelize.UUID,
             allowNull: false
         },
-        discount_code_campaign_id: {
+        discountCodeCampaignId: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

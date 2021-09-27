@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const socialMedia = sequelize.define("social_medias", {
-        marketer_id: {
+        marketerId: {
             type: Sequelize.UUID,
             allowNull: false
         },
@@ -15,11 +15,7 @@ module.exports = (sequelize, Sequelize) => {
         registeredAt: {
             type: Sequelize.DATE,
             allowNull: true
-        },
-        registeredBy: {
-            type: Sequelize.UUID,
-            allowNull: true
-        },
+        }
     }, {
         timestamps: true,
         paranoid: true

@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const document = sequelize.define("documents", {
-        user_id: {
+        userId: {
             type: Sequelize.UUID,
             allowNull: false
         },

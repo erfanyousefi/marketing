@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const discountCodeCampaign = sequelize.define("discount_code_campaigns", {
-        advertise_owner_id: {
+        advertiseOwnerId: {
             type: Sequelize.UUID,
             allowNull: false
         },
@@ -12,7 +12,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
-        marketer_level_id: {
+        marketerLevelId: {
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -47,11 +47,7 @@ module.exports = (sequelize, Sequelize) => {
         registeredAt: {
             type: Sequelize.DATE,
             allowNull: true
-        },
-        registeredBy: {
-            type: Sequelize.UUID,
-            allowNull: true
-        },
+        }
     }, {
         timestamps: true,
         paranoid: true

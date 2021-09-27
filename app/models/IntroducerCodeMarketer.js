@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const introducerCodeMarketer = sequelize.define("introducer_code_marketers", {
-        marketer_id: {
+        marketerId: {
             type: Sequelize.UUID,
             allowNull: false
         },
-        link_campaign_id: {
+        linkCampaignId: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

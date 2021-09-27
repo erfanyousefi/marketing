@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const SMSPanelMarketerLevel = sequelize.define("sms_panel_marketer_levels", {
-        level_id: {
+        levelId: {
             type: Sequelize.INTEGER,
             allowNull: false
         },

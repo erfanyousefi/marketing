@@ -61,60 +61,245 @@ db.DiscountCodeMarketer = require("./DiscountCodeMarketer.js")(sequelize, Sequel
 db.DiscountCodeUserDate = require("./DiscountCodeUserDate.js")(sequelize, Sequelize);
 
 
-// TODO :: Relations
+//Relations
 
-//AdvertiseOwner and admin
-
-//Marketer and admin
 
 //Marketer and parent
+db.Marketer.hasMany(db.Marketer, {foreignKey: 'parentMarketerId'});
+//Marketer and MarketerLevel
+db.MarketerLevel.hasMany(db.Marketer);
+db.Marketer.belongsTo(db.MarketerLevel);
+//Document and AdvertiseOwner
+db.AdvertiseOwner.hasMany(db.Document, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'AdvertiseOwner'
+    }
+});
+db.Document.belongsTo(db.AdvertiseOwner, {foreignKey: 'userId', constraints: false});
+//Document and Marketer
+db.Marketer.hasMany(db.Document, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'Marketer'
+    }
+});
+db.Document.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
+//Ticket and AdvertiseOwner
+db.Ticket.hasMany(db.Marketer);
+db.Marketer.belongsTo(db.MarketerLevel);
+//Ticket and AdvertiseOwner
+db.AdvertiseOwner.hasMany(db.Ticket, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'AdvertiseOwner'
+    }
+});
+db.Ticket.belongsTo(db.AdvertiseOwner, {foreignKey: 'userId', constraints: false});
+//Ticket and Marketer
+db.Marketer.hasMany(db.Ticket, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'Marketer'
+    }
+});
+db.Ticket.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
+//TicketMessage and Admin
+db.Admin.hasMany(db.TicketMessage, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'Admin'
+    }
+});
+db.TicketMessage.belongsTo(db.Admin, {foreignKey: 'userId', constraints: false});
+//TicketMessage and AdvertiseOwner
+db.AdvertiseOwner.hasMany(db.TicketMessage, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'AdvertiseOwner'
+    }
+});
+db.TicketMessage.belongsTo(db.AdvertiseOwner, {foreignKey: 'userId', constraints: false});
+//TTicketMessage and Marketer
+db.Marketer.hasMany(db.TicketMessage, {
+    foreignKey: 'userId',
+    constraints: false,
+    scope: {
+        role: 'Marketer'
+    }
+});
+db.TicketMessage.belongsTo(db.Marketer, {foreignKey: 'userId', constraints: false});
 
-//Marketer and level
-
-//AdvertiseOwner and Document
-
-//Marketer and Document
-
-//AdvertiseOwner and Ticket
-
-//Marketer and Ticket
-
-//Admin and TicketMessage
-
-//AdvertiseOwner and TicketMessage
-
-//Marketer and TicketMessage
 
 //Marketer and SocialMedia
-
-//Marketer and MarketerLevel
-
+db.Marketer.hasMany(db.SocialMedia);
+db.SocialMedia.belongsTo(db.Marketer);
 //MarketerLevel and SMSPanelMarketerLevel
-
+db.MarketerLevel.hasMany(db.SMSPanelMarketerLevel);
+db.SMSPanelMarketerLevel.belongsTo(db.MarketerLevel);
 //MarketerLevel and BuyLinkMarketerLevel
-
+db.MarketerLevel.hasMany(db.BuyLinkMarketerLevel);
+db.BuyLinkMarketerLevel.belongsTo(db.MarketerLevel);
 //MarketerLevel and ShareLinkMarketerLevel
-
+db.MarketerLevel.hasMany(db.ShareLinkMarketerLevel);
+db.ShareLinkMarketerLevel.belongsTo(db.MarketerLevel);
 //MarketerLevel and IntroducerCodeMarketerLevel
-
+db.MarketerLevel.hasMany(db.IntroducerCodeMarketerLevel);
+db.IntroducerCodeMarketerLevel.belongsTo(db.MarketerLevel);
 //MarketerLevel and DiscountCodeMarketerLevel
-
+db.MarketerLevel.hasMany(db.DiscountCodeMarketerLevel);
+db.DiscountCodeMarketerLevel.belongsTo(db.MarketerLevel);
 //Product and Image
-
-//Product and Image
-
+db.Product.hasMany(db.Image, {
+    foreignKey: 'modelId',
+    constraints: false,
+    scope: {
+        model: 'Product'
+    }
+});
+db.Image.belongsTo(db.Product, {foreignKey: 'modelId', constraints: false});
 //ProductCampaign and Image
-
+db.ProductCampaign.hasMany(db.Image, {
+    foreignKey: 'modelId',
+    constraints: false,
+    scope: {
+        model: 'ProductCampaign'
+    }
+});
+db.Image.belongsTo(db.ProductCampaign, {foreignKey: 'modelId', constraints: false});
 //LinkCampaign and Image
-
+db.LinkCampaign.hasMany(db.Image, {
+    foreignKey: 'modelId',
+    constraints: false,
+    scope: {
+        model: 'LinkCampaign'
+    }
+});
+db.Image.belongsTo(db.LinkCampaign, {foreignKey: 'modelId', constraints: false});
 //DiscountCodeCampaign and Image
+db.DiscountCodeCampaign.hasMany(db.Image, {
+    foreignKey: 'modelId',
+    constraints: false,
+    scope: {
+        model: 'DiscountCodeCampaign'
+    }
+});
+db.Image.belongsTo(db.DiscountCodeCampaign, {foreignKey: 'modelId', constraints: false});
+
+
+
+//ProductCampaign::
+
+//ProductCampaign and AdvertiseOwner
+db.AdvertiseOwner.hasMany(db.ProductCampaign);
+db.ProductCampaign.belongsTo(db.AdvertiseOwner);
+//ProductCampaign and Product
+db.Product.hasMany(db.ProductCampaign);
+db.ProductCampaign.belongsTo(db.Product);
+//ProductCampaign and MarketerLevel
+db.MarketerLevel.hasMany(db.ProductCampaign);
+db.ProductCampaign.belongsTo(db.MarketerLevel);
+
+//SMSPanelMarketer and ProductCampaign
+db.ProductCampaign.hasMany(db.SMSPanelMarketer);
+db.SMSPanelMarketer.belongsTo(db.ProductCampaign);
+//SMSPanelMarketer and Marketer
+db.Marketer.hasMany(db.SMSPanelMarketer);
+db.SMSPanelMarketer.belongsTo(db.Marketer);
+//SMSPanelPhoneNumber and ProductCampaign
+db.ProductCampaign.hasMany(db.SMSPanelPhoneNumber);
+db.SMSPanelPhoneNumber.belongsTo(db.ProductCampaign);
+//SMSPanelPhoneNumber and SMSPanelMarketer
+db.SMSPanelMarketer.hasMany(db.SMSPanelPhoneNumber);
+db.SMSPanelPhoneNumber.belongsTo(db.SMSPanelMarketer);
+
+//BuyLinkMarketer and ProductCampaign
+db.ProductCampaign.hasMany(db.BuyLinkMarketer);
+db.BuyLinkMarketer.belongsTo(db.ProductCampaign);
+//BuyLinkMarketer and Marketer
+db.Marketer.hasMany(db.BuyLinkMarketer);
+db.BuyLinkMarketer.belongsTo(db.Marketer);
+//BuyLinkUserData and ProductCampaign
+db.ProductCampaign.hasMany(db.BuyLinkUserData);
+db.BuyLinkUserData.belongsTo(db.ProductCampaign);
+//BuyLinkUserData and BuyLinkMarketer
+db.BuyLinkMarketer.hasMany(db.BuyLinkUserData);
+db.BuyLinkUserData.belongsTo(db.BuyLinkMarketer);
+
+
+//LinkCampaign::
+
+//LinkCampaign and AdvertiseOwner
+db.AdvertiseOwner.hasMany(db.LinkCampaign);
+db.LinkCampaign.belongsTo(db.AdvertiseOwner);
+//LinkCampaign and Link
+db.Link.hasMany(db.LinkCampaign);
+db.LinkCampaign.belongsTo(db.Link);
+//LinkCampaign and MarketerLevel
+db.MarketerLevel.hasMany(db.LinkCampaign);
+db.LinkCampaign.belongsTo(db.MarketerLevel);
+
+//ShareLinkMarketer and LinkCampaign
+db.LinkCampaign.hasMany(db.ShareLinkMarketer);
+db.ShareLinkMarketer.belongsTo(db.LinkCampaign);
+//ShareLinkMarketer and Marketer
+db.Marketer.hasMany(db.ShareLinkMarketer);
+db.ShareLinkMarketer.belongsTo(db.Marketer);
+//ShareLinkUserDate and LinkCampaign
+db.LinkCampaign.hasMany(db.ShareLinkUserDate);
+db.ShareLinkUserDate.belongsTo(db.LinkCampaign);
+//ShareLinkUserDate and ShareLinkMarketer
+db.ShareLinkMarketer.hasMany(db.ShareLinkUserDate);
+db.ShareLinkUserDate.belongsTo(db.ShareLinkMarketer);
+
+//IntroducerCodeMarketer and LinkCampaign
+db.LinkCampaign.hasMany(db.IntroducerCodeMarketer);
+db.IntroducerCodeMarketer.belongsTo(db.LinkCampaign);
+//IntroducerCodeMarketer and Marketer
+db.Marketer.hasMany(db.IntroducerCodeMarketer);
+db.IntroducerCodeMarketer.belongsTo(db.Marketer);
+//IntroducerCodeUserData and LinkCampaign
+db.LinkCampaign.hasMany(db.IntroducerCodeUserData);
+db.IntroducerCodeUserData.belongsTo(db.LinkCampaign);
+//IntroducerCodeUserData and IntroducerCodeMarketer
+db.IntroducerCodeMarketer.hasMany(db.IntroducerCodeUserData);
+db.IntroducerCodeUserData.belongsTo(db.IntroducerCodeMarketer);
+
+
+//DiscountCodeCampaign::
+
+//DiscountCodeCampaign and AdvertiseOwner
+db.AdvertiseOwner.hasMany(db.DiscountCodeCampaign);
+db.DiscountCodeCampaign.belongsTo(db.AdvertiseOwner);
+//DiscountCodeCampaign and MarketerLevel
+db.MarketerLevel.hasMany(db.DiscountCodeCampaign);
+db.DiscountCodeCampaign.belongsTo(db.MarketerLevel);
+
+//DiscountCodeMarketer and DiscountCodeCampaign
+db.DiscountCodeCampaign.hasMany(db.DiscountCodeMarketer);
+db.DiscountCodeMarketer.belongsTo(db.DiscountCodeCampaign);
+//DiscountCodeMarketer and Marketer
+db.Marketer.hasMany(db.DiscountCodeMarketer);
+db.DiscountCodeMarketer.belongsTo(db.Marketer);
+//DiscountCodeUserDate and DiscountCodeCampaign
+db.DiscountCodeCampaign.hasMany(db.DiscountCodeUserDate);
+db.DiscountCodeUserDate.belongsTo(db.DiscountCodeCampaign);
+//DiscountCodeUserDate and DiscountCodeMarketer
+db.DiscountCodeMarketer.hasMany(db.DiscountCodeUserDate);
+db.DiscountCodeUserDate.belongsTo(db.DiscountCodeMarketer);
 
 
 db
     .sequelize
     .sync({
         force: false,// TODO :: remove in production
-        logging : false
+        logging: false
     })
     .then(() => {
         console.log("Successfully connected to database");
